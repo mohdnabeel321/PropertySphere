@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Are you sure you want to delete this property?</h2>
+    <p>Title: {{ property.title }}</p>
+    <p>Address: {{ property.Address }}</p>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit">Yes, Delete</button>
+    </form>
+    <a href="{% url 'property_list' %}">Cancel</a>
+{% endblock %}
